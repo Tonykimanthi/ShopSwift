@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center">
+    <nav className="max-md:hidden">
       <ul className="flex items-center gap-x-5 text-xl">
         <li className="text-primary-dark-blue hover:text-secondary-blue transition-colors">
           <Link to="/">Home</Link>
