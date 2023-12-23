@@ -12,8 +12,16 @@ const Home = () => {
     "https://fakestoreapi.com/products"
   );
 
+  const handleSliceTitle = (title: string) => {
+    if (title.length > 80) {
+      return title.slice(0, 80) + "...";
+    } else {
+      return title;
+    }
+  };
+
   return (
-    <div className="mt-5 px-5">
+    <div className="mt-3 px-5">
       {loading && (
         <span className="mt-10 text-2xl text-primary-green block text-center">
           Loading...
@@ -24,7 +32,7 @@ const Home = () => {
           Oops! Something went wrong.
         </span>
       ) : (
-        <main className="grid grid-cols-3 gap-4">
+        <main className="grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
           {(data as product[]).map((item) => (
             <article className="bg-slate-50 flex flex-col p-4 rounded cursor-pointer overflow-hidden">
               <div className="flex justify-center">
@@ -35,7 +43,7 @@ const Home = () => {
                 />
               </div>
               <h3 className="mt-2 text-primary-dark-blue font-medium leading-tight">
-                {item.title}
+                {handleSliceTitle(item.title)}
               </h3>
 
               <div className="flex flex-col mt-auto gap-y-1">
