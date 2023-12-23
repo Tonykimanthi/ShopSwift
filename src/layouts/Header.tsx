@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 const Header = () => {
   return (
-    <header className="p-2 flex items-center justify-between bg-primary-yellow">
+    <header className="p-2 flex items-center justify-between bg-secondary-yellow">
       <Logo />
       <Navbar />
       <AccountInfo />
