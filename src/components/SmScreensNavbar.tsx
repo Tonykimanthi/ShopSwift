@@ -18,13 +18,13 @@ const SmScreensNavbar = () => {
       }`}
     >
       {/* Close nav btn */}
-      <button className="absolute top-5 right-5 text-slate-50 hover:text-primary-red hover:scale-125 transition" onClick={()=>{
+      <button className="absolute top-8 right-8 text-slate-50 hover:text-primary-red hover:scale-125 transition" onClick={()=>{
         setNavIsActive(!navIsActive)
       }}>
         <IoMdClose className="w-6 h-6 " />
       </button>
 
-      <ul className="mt-20 space-y-5 text-cente text-primary-yellow text-xl">
+      <ul className="mt-24 space-y-5 text-cente text-primary-yellow text-xl">
         <li className="hover:text-primary-orange transition-colors">
           <Link to="/">Home</Link>
         </li>
