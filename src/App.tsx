@@ -1,6 +1,6 @@
 import Header from "./layouts/Header";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Shop from "./pages/Shop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SmScreensNavbar from "./components/SmScreensNavbar";
 import { createContext, useState } from "react";
@@ -23,7 +23,7 @@ function App() {
         <SmScreensNavbar />
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/about" Component={About} />
+          <Route path="/shop" Component={Shop} />
         </Routes>
       </Router>
     </navContext.Provider>

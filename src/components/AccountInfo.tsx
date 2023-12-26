@@ -22,7 +22,7 @@ const AccountInfo = () => {
 
       {/* Favorites */}
       <button className="max-md:hidden">
-        <MdFavoriteBorder className="w-6 h-6 fill-primary-dark-blue"/>
+        <MdFavoriteBorder className="w-6 h-6 fill-primary-darkblue"/>
       </button>
 
       <button className="flex gap-x-1 relative">

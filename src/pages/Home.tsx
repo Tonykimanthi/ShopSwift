@@ -1,62 +1,46 @@
-import useFetch from "../hooks/useFetch";
-
-interface product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-}
+import { Link } from "react-router-dom";
+import { homePageList } from "../data/homepageList";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion"
 
 const Home = () => {
-  const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products"
-  );
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [sectionKey, setSectionKey] = useState<number>(0);
+  const [asideKey, setAsideKey] = useState<number>(1);
 
-  const handleSliceTitle = (title: string) => {
-    if (title.length > 80) {
-      return title.slice(0, 80) + "...";
-    } else {
-      return title;
-    }
+  console.log("current", currentIndex);
+  useEffect(() => {
+    const currentIndex = setInterval(handleCurrentCategory, 5000);
+
+    return () => {
+      clearInterval(currentIndex);
+    };
+  }, []);
+
+  const handleCurrentCategory = () => {
+    setCurrentIndex(prev => (prev + 1) % homePageList.length);
+    setSectionKey(prev => prev + 1)
+    setAsideKey(prev => prev + 1)
   };
 
-  return (
-    <div className="mt-3 px-5">
-      {loading && (
-        <span className="mt-10 text-2xl text-primary-green block text-center">
-          Loading...
-        </span>
-      )}
-      {!loading && error ? (
-        <span className="mt-10 text-2xl text-primary-red block text-center">
-          Oops! Something went wrong.
-        </span>
-      ) : (
-        <main className="grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-          {(data as product[]).map((item) => (
-            <article className="bg-slate-50 flex flex-col p-4 rounded cursor-pointer overflow-hidden">
-              <div className="flex justify-center">
-                <img
-                  className="h-40 object-cover"
-                  src={item.image}
-                  alt={item.title}
-                />
-              </div>
-              <h3 className="mt-2 text-primary-dark-blue font-medium leading-tight">
-                {handleSliceTitle(item.title)}
-              </h3>
 
-              <div className="flex flex-col mt-auto gap-y-1">
-                <span className="text-lg font-bold">{`$${item.price}`}</span>
-                <button className="py-2.5 font-medium bg-primary-yellow hover:bg-secondary-yellow transition">
-                  Add to cart
-                </button>
-              </div>
-            </article>
-          ))}
-        </main>
-      )}
-    </div>
+  return (
+    <main className="bg-primary-lightblue h-96 text-black px-32 flex justify-between items-center overflow-hidden">
+      <motion.section key={sectionKey} initial={{opacity: 0, y: 100 + "%"}} animate={{opacity: 1, y: 0}} transition={{duration: .5, delay: .6}}>
+        <h2 className="text-6xl font-bold">{homePageList[currentIndex].title}</h2>
+        <p className="mt-1 font-medium">{homePageList[currentIndex].description}</p>
+        <button className="mt-5 px-6 py-2 text-white rounded bg-primary-darkblue hover:bg-black transition">
+          <Link to="shop">Shop now</Link>
+        </button>
+      </motion.section>
+      <motion.aside key={asideKey} className="w-96" initial={{x: 100 + "%", opacity: 0}} animate={{x: 0, opacity: 1}} transition={{duration: 1}}>
+        <img
+          className="object-cover"
+          src={homePageList[currentIndex].image}
+          alt={homePageList[currentIndex].title}
+        />
+      </motion.aside>
+    </main>
   );
 };
 

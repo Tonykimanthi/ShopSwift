@@ -13,7 +13,7 @@ const SmScreensNavbar = () => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 right-0 bottom-0 flex justify-center bg-primary-dark-blue transition origin-top-right ${
+      className={`absolute top-0 left-0 right-0 bottom-0 flex justify-center bg-primary-darkblue transition origin-top-right ${
         navIsActive ? "scale-100" : "scale-0"
       }`}
     >
@@ -29,7 +29,7 @@ const SmScreensNavbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/about">About Us</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
           <Link to="/electronics">Electronics</Link>
