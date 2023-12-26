@@ -15,7 +15,7 @@ const AccountInfo = () => {
   const { navIsActive, setNavIsActive } = useContext(navContext) as NavcontextProps;
 
   return (
-    <div className="mr-5 flex items-center gap-x-5">
+    <div className="mr-4 flex items-center gap-x-5">
       <button className="mr-2 max-md:mr-0 text-primary-blue text-lg py-1 rounded hover:text-secondary-blue transition">
         <Link to="/login">Login</Link>
       </button>
@@ -31,7 +31,7 @@ const AccountInfo = () => {
       </button>
 
       {/* Btn to show sm screens navbar */}
-      <button className="hidden max-md:block ml-5" onClick={()=>{
+      <button className="hidden max-md:block ml-5 p-2 rounded-full hover:text-slate-50 hover:bg-primary-darkblue transition" onClick={()=>{
         setNavIsActive(!navIsActive)
       }}>
         <HiOutlineMenu className="w-6 h-6"/>
