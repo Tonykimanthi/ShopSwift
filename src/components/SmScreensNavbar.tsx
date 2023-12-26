@@ -13,7 +13,7 @@ const SmScreensNavbar = () => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 right-0 bottom-0 flex justify-center bg-primary-darkblue transition origin-top-right ${
+      className={`absolute top-0 left-0 right-0 bottom-0 flex justify-center bg-primary-darkblue transition origin-top-right z-10 ${
         navIsActive ? "scale-100" : "scale-0"
       }`}
     >
