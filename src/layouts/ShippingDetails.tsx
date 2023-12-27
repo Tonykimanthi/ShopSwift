@@ -31,13 +31,13 @@ const ShippingDetails = () => {
 
 
   return (
-    <section className="bg-yellow-200 py-2 flex justify-center gap-3">
+    <section className="bg-yellow-200/80 py-2 flex justify-center items-center gap-3 max-sm:flex-col">
       {shippingData.map((item) => (
         <article className="flex items-center gap-x-3">
         <item.icon className="w-12 h-12 fill-primary-blue"/>
         <div>
-          <h3 className="text-xl font-bold">{item.title}</h3>
-          <p className="leading-4 max-w-56">{item.description}</p>
+          <h3 className="text-xl font-bold leading-5">{item.title}</h3>
+          <p className="mt-1 leading-4 max-w-56">{item.description}</p>
         </div>
       </article>
       ))}
