@@ -34,7 +34,7 @@ const Home = () => {
       ) : (
         <main className="grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
           {(data as product[]).map((item) => (
-            <article className="bg-slate-50 flex flex-col p-4 rounded cursor-pointer overflow-hidden group">
+            <article className="bg-white flex flex-col p-4 rounded cursor-pointer overflow-hidden group">
               <div className="flex justify-center">
                 <img
                   className="h-40 object-cover group-hover:scale-110 transition-all duration-500"
