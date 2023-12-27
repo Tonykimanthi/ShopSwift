@@ -4,7 +4,7 @@ import MainNavbar from "../components/MainNavbar";
 
 const Header = () => {
   return (
-    <header className="p-2 flex items-center justify-between bg-secondary-yellow">
+    <header className="p-2 flex items-center justify-between bg-slate-200">
       <Logo />
       <MainNavbar />
       <AccountInfo />
