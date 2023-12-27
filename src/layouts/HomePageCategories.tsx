@@ -23,7 +23,7 @@ const HomePageCategories = () => {
   ];
 
   return (
-    <section className="mt-5 px-10 grid grid-cols-3 grid-rows-2 gap-2 max-sm:grid-cols-1 max-sm:px-5">
+    <section className="my-5 px-10 grid grid-cols-3 grid-rows-2 gap-2 max-sm:grid-cols-1 max-sm:px-5">
       {categories.map((category, index) => (
         <article key={index} style={{backgroundImage: `url(${category.image})`}} className={`bg-center relative ${category.customStyles}`}>
           <div className="absolute top-24 left-8 text-white">
