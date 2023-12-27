@@ -24,7 +24,7 @@ const HomePageMain = () => {
   };
 
   return (
-    <main className="bg-primary-lightblue h-96 text-black px-32 flex justify-between items-center overflow-hidden max-lg:px-10 max-sm:flex-col-reverse max-sm:justify-center max-sm:h-fit max-sm:py-6">
+    <main className="bg-primary-lightblue h-96 text-black px-32 flex justify-between items-center overflow-hidden max-lg:px-10 max-sm:flex-col-reverse max-sm:justify-center max-sm:h-fit max-sm:py-6 max-sm:text-center">
       <motion.section
         key={sectionKey}
         initial={{ opacity: 0, y: 100 + "%" }}

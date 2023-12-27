@@ -1,5 +1,5 @@
 import HomePageMain from "../layouts/HomePageMain";
-import ShippingDetails from "../layouts/ShippingDetails";
+import ShippingInfo from "../layouts/ShippingInfo";
 
 const Home = () => {
 
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <HomePageMain />
-      <ShippingDetails />
+      <ShippingInfo />
     </div>
   );
 };
