@@ -3,13 +3,14 @@ import { useContext } from "react";
 import { navContext } from "../App";
 import { IoMdClose } from "react-icons/io";
 
-
 interface NavcontextProps {
-    navIsActive: boolean;
-    setNavIsActive: (navIsActive: boolean) => void;
-  }
+  navIsActive: boolean;
+  setNavIsActive: (navIsActive: boolean) => void;
+}
 const SmScreensNavbar = () => {
-  const { navIsActive, setNavIsActive } = useContext(navContext) as NavcontextProps;
+  const { navIsActive, setNavIsActive } = useContext(
+    navContext
+  ) as NavcontextProps;
 
   return (
     <nav
@@ -18,9 +19,12 @@ const SmScreensNavbar = () => {
       }`}
     >
       {/* Close nav btn */}
-      <button className="absolute top-8 right-8 text-slate-50 hover:text-primary-red hover:scale-125 transition" onClick={()=>{
-        setNavIsActive(!navIsActive)
-      }}>
+      <button
+        className="absolute top-8 right-8 text-slate-50 hover:text-primary-red hover:scale-125 transition"
+        onClick={() => {
+          setNavIsActive(!navIsActive);
+        }}
+      >
         <IoMdClose className="w-6 h-6 " />
       </button>
 
