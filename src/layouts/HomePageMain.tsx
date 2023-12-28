@@ -10,7 +10,7 @@ const HomePageMain = () => {
 
   console.log("current", currentIndex);
   useEffect(() => {
-    const currentIndex = setInterval(handleCurrentCategory, 5000);
+    const currentIndex = setInterval(handleCurrentCategory, 10000);
 
     return () => {
       clearInterval(currentIndex);
