@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { navContext } from "../App";
 import { IoMdClose } from "react-icons/io";
 
@@ -12,8 +12,27 @@ const SmScreensNavbar = () => {
     navContext
   ) as NavcontextProps;
 
+  const navBar = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleCloseNavbar = (e: Event) => {
+      if (navBar.current === null) return;
+
+      if (!navBar.current.contains(e.target as HTMLBodyElement)) {
+        setNavIsActive(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleCloseNavbar);
+
+    return () => {
+      document.body.removeEventListener("click", handleCloseNavbar);
+    };
+  });
+
   return (
     <nav
+      ref={navBar}
       className={`absolute top-0 left-2/4 right-0 bottom-0 flex justify-center bg-primary-darkblue transition origin-top-right z-10 ${
         navIsActive ? "scale-100" : "scale-0"
       }`}

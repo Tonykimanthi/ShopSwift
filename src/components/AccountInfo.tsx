@@ -31,7 +31,8 @@ const AccountInfo = () => {
       </button>
 
       {/* Btn to show sm screens navbar */}
-      <button className="hidden max-md:block ml- p-2 rounded-full hover:text-slate-50 hover:bg-primary-darkblue transition" onClick={()=>{
+      <button className="hidden max-md:block ml- p-2 rounded-full hover:text-slate-50 hover:bg-primary-darkblue transition" onClick={(e)=>{
+        e.stopPropagation()
         setNavIsActive(!navIsActive)
       }}>
         <HiOutlineMenu className="w-6 h-6"/>
