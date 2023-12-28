@@ -31,7 +31,7 @@ const ShippingInfo = () => {
 
 
   return (
-    <section className="bg-slate-100 py-2 flex justify-center items-center gap-3 max-sm:flex-col border-b">
+    <section className="bg-slate-100 py-5 flex justify-center items-center gap-x-3 gap-y-5 max-sm:flex-col border-b border-slate-300">
       {shippingData.map((item) => (
         <article className="flex items-center gap-x-3">
         <item.icon className="w-12 h-12 fill-primary-blue"/>
