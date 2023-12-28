@@ -1,5 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import Search from "../components/Search";
+import Loader from "../components/Loader";
+import ErrorMessage from "../components/ErrorMessage";
 
 interface product {
   id: number;
@@ -22,16 +24,12 @@ const Home = () => {
   };
 
   return (
-    <div className="mt-4 px-5">
+    <div className="mt-4 px-5 flex flex-col items-center">
       {loading && (
-        <span className="mt-10 text-2xl text-primary-green block text-center">
-          Loading...
-        </span>
+        <Loader />
       )}
       {!loading && error ? (
-        <span className="mt-10 text-2xl text-primary-red block text-center">
-          Oops! Something went wrong.
-        </span>
+        <ErrorMessage />
       ) : (
         <div className="flex flex-col items-center">
           {/* Search */}
