@@ -5,16 +5,16 @@ const Navbar = () => {
     <nav className="max-md:hidden">
       <ul className="flex items-center gap-x-5 text-xl">
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/ShopSwift">Home</Link>
+          <Link to="#">Home</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/ShopSwift/shop">Shop</Link>
+          <Link to="#shop">Shop</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/ShopSwift/electronics">Electronics</Link>
+          <Link to="#electronics">Electronics</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/ShopSwift/jewelleries">Jewelery</Link>
+          <Link to="#jewelleries">Jewelery</Link>
         </li>
       </ul>
     </nav>

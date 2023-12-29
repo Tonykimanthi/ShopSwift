@@ -44,24 +44,24 @@ const SmScreensNavbar = () => {
           setNavIsActive(!navIsActive);
         }}
       >
-        <IoMdClose className="w-6 h-6 " />
+        <IoMdClose className="w-6 h-6" />
       </button>
 
       <ul className="mt-20 space-y-5 text-cente text-primary-yellow text-xl">
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/ShopSwift">Home</Link>
+          <Link to="#">Home</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/ShopSwift/shop">Shop</Link>
+          <Link to="#shop">Shop</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/ShopSwift/electronics">Electronics</Link>
+          <Link to="#electronics">Electronics</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/ShopSwift/jewelery">Jewelery</Link>
+          <Link to="#jewelery">Jewelery</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/ShopSwift/favorites">Favorites</Link>
+          <Link to="#favorites">Favorites</Link>
         </li>
       </ul>
     </nav>
