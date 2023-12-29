@@ -23,7 +23,7 @@ function App() {
         <SmScreensNavbar />
         <Routes>
           <Route path="/ShopSwift" Component={Home} />
-          <Route path="/shop" Component={Shop} />
+          <Route path="/ShopSwift/shop" Component={Shop} />
         </Routes>
       </Router>
     </navContext.Provider>

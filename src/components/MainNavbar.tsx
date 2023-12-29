@@ -8,13 +8,13 @@ const Navbar = () => {
           <Link to="/ShopSwift">Home</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/shop">Shop</Link>
+          <Link to="/ShopSwift/shop">Shop</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/electronics">Electronics</Link>
+          <Link to="/ShopSwift/electronics">Electronics</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/jewelery">Jewelery</Link>
+          <Link to="/ShopSwift/jewelleries">Jewelery</Link>
         </li>
       </ul>
     </nav>

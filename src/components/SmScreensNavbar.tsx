@@ -52,16 +52,16 @@ const SmScreensNavbar = () => {
           <Link to="/ShopSwift">Home</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/shop">Shop</Link>
+          <Link to="/ShopSwift/shop">Shop</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/electronics">Electronics</Link>
+          <Link to="/ShopSwift/electronics">Electronics</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/jewelery">Jewelery</Link>
+          <Link to="/ShopSwift/jewelery">Jewelery</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/favorites">Favorites</Link>
+          <Link to="/ShopSwift/favorites">Favorites</Link>
         </li>
       </ul>
     </nav>
