@@ -49,7 +49,7 @@ const SmScreensNavbar = () => {
 
       <ul className="mt-20 space-y-5 text-cente text-primary-yellow text-xl">
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="/">Home</Link>
+          <Link to="/ShopSwift">Home</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
           <Link to="/shop">Shop</Link>

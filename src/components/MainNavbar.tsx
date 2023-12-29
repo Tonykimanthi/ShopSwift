@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="max-md:hidden">
       <ul className="flex items-center gap-x-5 text-xl">
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
-          <Link to="/">Home</Link>
+          <Link to="/ShopSwift">Home</Link>
         </li>
         <li className="text-primary-darkblue hover:text-secondary-blue transition-colors">
           <Link to="/shop">Shop</Link>
