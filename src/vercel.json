@@ -1,7 +1,5 @@
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/shop", "dest": "/" },
-      { "src": "/electronics", "dest": "/" }
+    "rewrites":  [
+      {"source": "/(.*)", "destination": "/"}
     ]
   }
