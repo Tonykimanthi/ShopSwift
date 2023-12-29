@@ -7,7 +7,7 @@ import { createContext, useState } from "react";
 
 interface NavContextProps {
   navIsActive: boolean;
-  setNavIsActive: React.Dispatch<React.SetStateAction<boolean>>
+  setNavIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const navContext = createContext<NavContextProps | null>(null);
