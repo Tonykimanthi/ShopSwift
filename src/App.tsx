@@ -22,7 +22,7 @@ function App() {
         {/* Nav for sm screens */}
         <SmScreensNavbar />
         <Routes>
-          <Route path="/ShopSwift" Component={Home} />
+          <Route path="/ShopSwift/" Component={Home} />
           <Route path="/shop" Component={Shop} />
         </Routes>
       </Router>
