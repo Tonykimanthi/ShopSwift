@@ -49,19 +49,19 @@ const SmScreensNavbar = () => {
 
       <ul className="mt-20 space-y-5 text-cente text-primary-yellow text-xl">
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="#">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="#shop">Shop</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="#electronics">Electronics</Link>
+          <Link to="/electronics">Electronics</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="#jewelery">Jewelery</Link>
+          <Link to="/jewelery">Jewelery</Link>
         </li>
         <li className="hover:text-primary-orange transition-colors">
-          <Link to="#favorites">Favorites</Link>
+          <Link to="/favorites">Favorites</Link>
         </li>
       </ul>
     </nav>

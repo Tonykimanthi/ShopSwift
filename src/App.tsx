@@ -22,8 +22,8 @@ function App() {
         {/* Nav for sm screens */}
         <SmScreensNavbar />
         <Routes>
-          <Route path="#" Component={Home} />
-          <Route path="#shop" Component={Shop} />
+          <Route path="/" Component={Home} />
+          <Route path="/shop" Component={Shop} />
         </Routes>
       </Router>
     </navContext.Provider>
