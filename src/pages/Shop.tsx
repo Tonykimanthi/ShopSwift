@@ -15,13 +15,7 @@ const Home = () => {
     "https://fakestoreapi.com/products"
   );
 
-  const handleSliceTitle = (title: string) => {
-    if (title.length > 80) {
-      return title.slice(0, 80) + "...";
-    } else {
-      return title;
-    }
-  };
+  console.log(data)
 
   return (
     <div className="mt-4 px-5 flex flex-col items-center">
@@ -46,9 +40,7 @@ const Home = () => {
                     alt={item.title}
                   />
                 </div>
-                <h3 className="mt-2 text-primary-dark-blue font-medium leading-tight">
-                  {handleSliceTitle(item.title)}
-                </h3>
+                <h3 className="mt-2 text-primary-dark-blue font-medium leading-tight line-clamp-1">{item.title}</h3>
 
                 <div className="flex flex-col mt-auto gap-y-1">
                   <span className="text-lg font-bold">{`$${item.price}`}</span>
