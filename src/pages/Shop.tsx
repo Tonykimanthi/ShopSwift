@@ -19,15 +19,17 @@ const Home = () => {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    handleSearchProduct()
-  }, [data]);
+    handleSearchProduct();
+  }, [data, searchValue]);
 
   const handleSearchProduct = () => {
     if (searchValue === "") {
       setProducts(data);
-      return
+      return;
     } else {
-      const filterBySearch = (data as productProps[]).filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+      const filterBySearch = (data as productProps[]).filter((item) =>
+        item.title.toLowerCase().includes(searchValue.toLowerCase())
+      );
       setProducts(filterBySearch);
     }
   };
@@ -35,16 +37,24 @@ const Home = () => {
   return (
     <div className="mt-4 px-5 flex flex-col items-center">
       {loading && <Loader />}
+
       {!loading && error ? (
         <ErrorMessage />
       ) : (
         <div className="flex flex-col items-center">
           {/* Search */}
-          {!loading && <Search searchValue={searchValue} setSearchValue={setSearchValue} handleSearchProduct={handleSearchProduct}/>}
+          {!loading && (
+            <Search
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              handleSearchProduct={handleSearchProduct}
+            />
+          )}
+
           <main className="mt-3 grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {(products as productProps[]).map((item) => (
               <article
-                key={item.id} 
+                key={item.id}
                 className="bg-white flex flex-col p-4 rounded cursor-pointer overflow-hidden group"
               >
                 <div className="flex justify-center h-40 overflow-hidden">
@@ -67,6 +77,7 @@ const Home = () => {
               </article>
             ))}
           </main>
+          {products.length === 0 && !loading && <span className="m-5 text-white text-center">No result found</span>}
         </div>
       )}
     </div>
