@@ -13,12 +13,13 @@ const Search = ({
   handleSearchProduct,
 }: searchProps) => {
   return (
-    <form className="w-11/12 max-w-xl h-11 grid grid-cols-[minmax(20px,auto)_100px] relative">
+    <form className="w-11/12 max-w-xl h-11 relative">
       <IoSearchOutline className="w-6 h-6 absolute top-1/2 left-3 -translate-y-1/2" />
       <input
-        className="h-full pl-11 rounded-full outline-none bg-slate-100 focus:border border-primary-blue transition"
+        className="w-full h-full pl-11 pr-5 rounded-full outline-none bg-slate-100 focus:border border-primary-blue transition"
         type="search"
         name="search"
+        placeholder="Search"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
