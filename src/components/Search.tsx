@@ -20,6 +20,7 @@ const Search = ({
         type="search"
         name="search"
         placeholder="Search"
+        autoComplete="off"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
