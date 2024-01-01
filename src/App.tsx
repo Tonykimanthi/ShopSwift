@@ -2,12 +2,12 @@ import Header from "./layouts/Header";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import SmScreensNavbar from "./components/SmScreensNavbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { createContext, useState } from "react";
 import Electronics from "./pages/Electronics";
 import Jewelleries from "./pages/Jewelleries";
 import MenClothing from "./pages/MenClothing";
 import WomenClothing from "./pages/WomenClothing";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createContext, useState } from "react";
 
 interface NavContextProps {
   navIsActive: boolean;
