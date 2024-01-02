@@ -1,32 +1,52 @@
-import useFetch from "../hooks/useFetch"
+import { useEffect, useState } from "react";
+import ErrorMessage from "../components/ErrorMessage";
+import Loader from "../components/Loader";
+import useFetch from "../hooks/useFetch";
 
-interface productProps {
-    id: number;
-    image: string;
-    title: string;
-    description: string;
-    price: number;
-  }
+type productProps = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  image: string;
+};
 
 const ProductDetails = () => {
+  const { data, loading, error } = useFetch(
+    "https://fakestoreapi.com/products/1"
+  );
 
-    const {data, loading, error} = useFetch("https://fakestoreapi.com/products/1");
+  const [product, setProduct] = useState<productProps | null>(null);
+
+  useEffect(() => {
+    if (data) {
+      setProduct(data);
+      console.log(product)
+    }
+  }, [data]);
 
   return (
-    <>
-    {(data as productProps[]).map((item)=>(
-        <main>
-            <div>
-                <img src={item.image} alt={item.title} />
-            </div>
-            <div>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-            </div>
-        </main>
-    ))}
-    </>
-  )
-}
+    <main>
+      {loading && <Loader />}
+      {!loading && error ? (
+        <ErrorMessage />
+      ) : (
+        <>
+          {product && (
+            <>
+              <div>
+                <img src={product.image} alt={product.title} />
+              </div>
+              <div>
+                <h2>{product.title}</h2>
+                <p>{product.description}</p>
+              </div>
+            </>
+          )}
+        </>
+      )}
+    </main>
+  );
+};
 
-export default ProductDetails
+export default ProductDetails;

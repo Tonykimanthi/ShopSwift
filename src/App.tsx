@@ -1,11 +1,14 @@
 import Header from "./layouts/Header";
+import SmScreensNavbar from "./components/SmScreensNavbar";
+// Pages
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import SmScreensNavbar from "./components/SmScreensNavbar";
 import Electronics from "./pages/Electronics";
 import Jewelleries from "./pages/Jewelleries";
 import MenClothing from "./pages/MenClothing";
 import WomenClothing from "./pages/WomenClothing";
+import ProductDetails from "./pages/ProductDetails";
+// React
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
 
@@ -32,6 +35,7 @@ function App() {
           <Route path="/jewelleries" Component={Jewelleries} />
           <Route path="/menclothing" Component={MenClothing} />
           <Route path="/womenclothing" Component={WomenClothing} />
+          <Route path="/1" Component={ProductDetails} />
         </Routes>
       </Router>
     </navContext.Provider>
