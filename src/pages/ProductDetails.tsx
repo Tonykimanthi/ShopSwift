@@ -26,22 +26,22 @@ const ProductDetails = () => {
   }, [data]);
 
   return (
-    <main>
+    <main className="mt-4 flex flex-col items-center">
       {loading && <Loader />}
       {!loading && error ? (
         <ErrorMessage />
       ) : (
         <>
           {product && (
-            <>
+            <article className="flex bg-slate-200">
               <div>
-                <img src={product.image} alt={product.title} />
+                <img className="w-96" src={product.image} alt={product.title} />
               </div>
               <div>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
               </div>
-            </>
+            </article>
           )}
         </>
       )}
