@@ -35,7 +35,7 @@ function App() {
           <Route path="/jewelleries" Component={Jewelleries} />
           <Route path="/menclothing" Component={MenClothing} />
           <Route path="/womenclothing" Component={WomenClothing} />
-          <Route path="/shop/1" Component={ProductDetails} />
+          <Route path="/shop/:id" Component={ProductDetails} />
         </Routes>
       </Router>
     </navContext.Provider>

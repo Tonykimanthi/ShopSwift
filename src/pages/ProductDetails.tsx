@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import Loader from "../components/Loader";
 import useFetch from "../hooks/useFetch";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 type productProps = {
   id: number;
@@ -18,8 +18,9 @@ type productProps = {
 };
 
 const ProductDetails = () => {
+  const { id } = useParams();
   const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products/1"
+    `https://fakestoreapi.com/products/${id}`
   );
 
   const [product, setProduct] = useState<productProps | null>(null);
@@ -39,10 +40,10 @@ const ProductDetails = () => {
       ) : (
         <>
           {product && (
-            <article className="grid grid-cols-[30%_auto] bg-slate-100">
+            <article className="grid grid-cols-[40%_auto] bg-slate-100">
               <div>
                 <img
-                  className="object-cover"
+                  className="object-cover h-full"
                   src={product.image}
                   alt={product.title}
                 />
