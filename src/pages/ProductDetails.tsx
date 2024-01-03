@@ -40,10 +40,10 @@ const ProductDetails = () => {
       ) : (
         <>
           {product && (
-            <article className="grid grid-cols-[40%_auto] bg-slate-100">
-              <div>
+            <article className="grid grid-cols-[40%_auto] bg-slate-50">
+              <div className="place-self-center">
                 <img
-                  className="object-cover h-full"
+                  className="object-cover w-full h-full"
                   src={product.image}
                   alt={product.title}
                 />
@@ -59,7 +59,7 @@ const ProductDetails = () => {
                   <span className="mt-2 block text-lg italic font-medium">
                     Category:{" "}
                     <Link
-                      to="/menclothing"
+                      to={`/${product.category}`}
                       className="not-italic text-primary-blue hover:underline underline-offset-2 capitalize"
                     >
                       {product.category}
