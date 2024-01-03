@@ -21,7 +21,7 @@ const ProductDetails = () => {
   useEffect(() => {
     if (data) {
       setProduct(data);
-      console.log(product)
+      console.log(product);
     }
   }, [data]);
 

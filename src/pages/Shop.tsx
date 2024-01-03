@@ -11,7 +11,7 @@ interface productProps {
   image: string;
 }
 
-const Home = () => {
+const Shop = () => {
   const { data, loading, error } = useFetch(
     "https://fakestoreapi.com/products"
   );
@@ -23,6 +23,11 @@ const Home = () => {
   }, [data, searchValue]);
 
   const handleSearchProduct = () => {
+    if(!data){
+      setProducts([]);
+      return;
+    }
+
     if (searchValue === "") {
       setProducts(data);
       return;
@@ -77,11 +82,13 @@ const Home = () => {
               </article>
             ))}
           </main>
-          {products.length === 0 && !loading && <span className="m-5 text-white text-center">No result found</span>}
+          {products.length === 0 && !loading && (
+            <span className="m-5 text-white text-center">No result found</span>
+          )}
         </div>
       )}
     </div>
   );
 };
 
-export default Home;
+export default Shop;

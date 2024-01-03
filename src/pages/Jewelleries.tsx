@@ -25,7 +25,7 @@ const Jewelleries = () => {
         <div className="flex flex-col items-center w-full">
 
           <main className="mt-3 grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-            {(data as productProps[]).map((item) => (
+            {(data as productProps[] || []).map((item) => (
               <article
                 key={item.id}
                 className="bg-white flex flex-col p-4 rounded cursor-pointer overflow-hidden group"
