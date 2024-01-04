@@ -41,8 +41,8 @@ const ProductDetails = () => {
       ) : (
         <>
           {product && (
-            <div className="px-5 bg-slate-50">
-              <main className="flex bg-slate-50">
+            <main className="p-4 bg-slate-50">
+              <section className="flex gap-x-5 bg-slate-50">
                 <div className="w-1/3 max-w-72 overflow-hidden">
                   <img
                     className="object-cover w-full h-full"
@@ -50,19 +50,21 @@ const ProductDetails = () => {
                     alt={product.title}
                   />
                 </div>
-                <div className="px-5 py-2">
+                <div>
                   {/* Title */}
                   <div className="flex">
-                    <h2 className="text-3xl font-medium leading-tight">
+                    <h2 className="-mt-2.5 text-3xl font-medium leading-tight">
                       {product.title}
                     </h2>
-                    <button className="self-start mt-3">
-                      <FaRegHeart />
+                    <button className="self-start">
+                      <FaRegHeart className="w-6 h-6" />
                     </button>
                   </div>
 
                   <div className="mt-2">
-                    <span className="block text-3xl font-bold">${product.price}</span>
+                    <span className="block text-3xl font-bold">
+                      ${product.price}
+                    </span>
                     <span className="mt-2 block text-lg italic font-medium">
                       Category:{" "}
                       <Link
@@ -81,17 +83,18 @@ const ProductDetails = () => {
                   </div>
                 </div>
 
-                <aside>
-                  <button>Order now</button>
+                <aside className="-mt-4 p-3 bg-slate-100">
+                  <button className="bg-primary-orange text-white w-52 py-1">
+                    Order now
+                  </button>
                 </aside>
-              </main>
-
-              {/* Descriptions */}
-              <section className="mt-5">
-                <h3>Product Description</h3>
               </section>
 
-            </div>
+              {/* Product Description */}
+              <section className="mt-8">
+                <h3 className="text-2xl font-medium">Product Description</h3>
+              </section>
+            </main>
           )}
         </>
       )}
