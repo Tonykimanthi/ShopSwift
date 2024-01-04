@@ -2,6 +2,7 @@ import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
 import AddToCartBtn from "../components/AddToCartBtn";
+import { Link } from "react-router-dom";
 
 interface productProps {
   id: number;
@@ -27,8 +28,8 @@ const MenClothing = () => {
 
           <main className="mt-3 grid grid-cols-3 gap-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {(data as productProps[] || []).map((item) => (
+              <Link to={`/shop/${item.id}`} key={item.id}>
               <article
-                key={item.id}
                 className="bg-white flex flex-col p-4 rounded cursor-pointer overflow-hidden group"
               >
                 <div className="flex justify-center h-40 overflow-hidden">
@@ -47,6 +48,7 @@ const MenClothing = () => {
                   <AddToCartBtn />
                 </div>
               </article>
+              </Link>
             ))}
           </main>
         </div>
