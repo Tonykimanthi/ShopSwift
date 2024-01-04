@@ -3,6 +3,8 @@ import Search from "../components/Search";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
 import { useEffect, useState } from "react";
+import AddToCartBtn from "../components/AddToCartBtn";
+import NoResultsFound from "../components/NoResultsFound";
 
 interface productProps {
   id: number;
@@ -75,15 +77,13 @@ const Shop = () => {
 
                 <div className="flex flex-col mt-auto gap-y-1">
                   <span className="text-lg font-bold">{`$${item.price}`}</span>
-                  <button className="py-2.5 font-medium bg-primary-yellow hover:bg-secondary-yellow transition">
-                    Add to cart
-                  </button>
+                  <AddToCartBtn />
                 </div>
               </article>
             ))}
           </main>
           {products.length === 0 && !loading && (
-            <span className="m-5 text-white text-center">No result found</span>
+            <NoResultsFound />
           )}
         </div>
       )}
