@@ -1,6 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
+import AddToCartBtn from "../components/AddToCartBtn";
 
 interface productProps {
   id: number;
@@ -43,9 +44,7 @@ const WomenClothing = () => {
 
                 <div className="flex flex-col mt-auto gap-y-1">
                   <span className="text-lg font-bold">{`$${item.price}`}</span>
-                  <button className="py-2.5 font-medium bg-primary-yellow hover:bg-secondary-yellow transition">
-                    Add to cart
-                  </button>
+                  <AddToCartBtn />
                 </div>
               </article>
             ))}
