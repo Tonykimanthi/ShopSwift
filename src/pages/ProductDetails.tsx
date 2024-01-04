@@ -88,7 +88,7 @@ const ProductDetails = () => {
                 </div>
 
                 <aside className="-mt-4 p-3 bg-slate-100">
-                  <button className="bg-primary-orange text-white w-52 py-1">
+                  <button className="text-white w-52 py-1 bg-primary-orange/80 hover:bg-primary-orange transition">
                     Order now
                   </button>
                 </aside>
