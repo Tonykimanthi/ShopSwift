@@ -30,7 +30,6 @@ const ProductDetails = () => {
   useEffect(() => {
     if (data) {
       setProduct(data);
-      console.log(product);
     }
   }, [data]);
 
