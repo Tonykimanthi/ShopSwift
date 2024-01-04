@@ -82,7 +82,9 @@ const ProductDetails = () => {
                       </small>
                     </span>
                   </div>
-                  <AddToCartBtn />
+                  <button className="mt-5 w-full">
+                    <AddToCartBtn />
+                  </button>
                 </div>
 
                 <aside className="-mt-4 p-3 bg-slate-100">
