@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import useFetch from "../hooks/useFetch";
 import { Link, useParams } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import AddToCartBtn from "../components/AddToCartBtn";
 
 type productProps = {
   id: number;
@@ -43,24 +44,24 @@ const ProductDetails = () => {
           {product && (
             <main className="p-4 bg-slate-50">
               <section className="flex gap-x-5 bg-slate-50">
-                <div className="w-1/3 max-w-72 overflow-hidden">
+                <aside className="w-1/3 max-w-72 overflow-hidden">
                   <img
                     className="object-cover w-full h-full"
                     src={product.image}
                     alt={product.title}
                   />
-                </div>
+                </aside>
+
                 <div>
                   {/* Title */}
-                  <div className="flex">
-                    <h2 className="-mt-2.5 text-3xl font-medium leading-tight">
+                  <div className="flex -mt-2">
+                    <h2 className="-mt-0.5 text-3xl font-medium leading-tight">
                       {product.title}
                     </h2>
-                    <button className="self-start">
-                      <FaRegHeart className="w-6 h-6" />
+                    <button className="self-start p-2 rounded-full hover:bg-primary-orange/30 transition">
+                      <FaRegHeart className="w-6 h-6 fill-primary-orange" />
                     </button>
                   </div>
-
                   <div className="mt-2">
                     <span className="block text-3xl font-bold">
                       ${product.price}
@@ -81,6 +82,7 @@ const ProductDetails = () => {
                       </small>
                     </span>
                   </div>
+                  <AddToCartBtn />
                 </div>
 
                 <aside className="-mt-4 p-3 bg-slate-100">
